@@ -60,6 +60,7 @@ func NewDialect(engine *xorm.Engine) Dialect {
 	case SQLITE:
 		return NewSqlite3Dialect(engine)
 	case POSTGRES:
+		engine.SetSchema("grafanadashboard")
 		return NewPostgresDialect(engine)
 	}
 
